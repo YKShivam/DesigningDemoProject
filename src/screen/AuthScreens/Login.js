@@ -6,6 +6,8 @@ import CoustomBtn from '../../components/CoustomBtn'
 import { CountryPicker } from 'react-native-country-codes-picker'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 import FastImage from 'react-native-fast-image'
+import CountryFlagView from '../../components/CountryFlagView'
+import CoustomInput from '../../components/CoustomInput'
 
 export default function Login({ navigation }) {
     const [countryCode, setCountryCode] = useState("+1");
@@ -16,58 +18,39 @@ export default function Login({ navigation }) {
     const [show, setShow] = useState(false);
     return (
         <View style={style.mainContainer}>
+            <View style={{justifyContent:"center",padding:10}}>
+            
             <Text style={style.mainTitle}>Login</Text>
-            <View style={style.textInputContain}>
-
-                <Pressable
-                    onPress={() => {
-                        setIsVisible(true);
-                        setShow(true)
-                    }}
-                    style={[style.countryContain, { borderWidth: 1, }]}
-                >
+            <Text style={style.textTitle}>Enter Your Registered Number</Text>
 
 
-                    <Text style={{ fontSize: 20 }} >{countryFlag} </Text>
-
-                    <FastImage
-                        resizeMode="contain"
-                        tintColor={appColors.black}
-                        source={require('../../assets/downIcon.png')}
-                        style={style.downarrow}
-                    />
-
-                    <CountryPicker
-                        show={show}
-
-                        pickerButtonOnPress={(item) => {
-                            console.log('item==>>', item);
-                            setCountryCode(item.dial_code);
-                            setCountryFlag(item.flag)
-                            setShow(false);
+            <View style={{ marginTop: "5%" }}>
+                <CountryFlagView
+                    pickerButtonPress={
+                        (i) => {
+                            setCountryCode(i?.dial_code)
+                            setCountryFlag(i.flag)
                         }}
-                        style={{ height: heightPercentageToDP(30) }}
-                    />
-                </Pressable>
-                <TextInput
-                    style={style.textInput}
-                    placeholder="Enter Phone Number"
-                    placeholderTextColor={"grey"}
-                    keyboardType="numeric"
                     onChangeText={(i) => {
-                        setPhoneNumber(i);
+                        setPhoneNumber(i)
                     }}
-                    maxLength={10}
                 />
             </View>
-            <CoustomBtn />
+            <Text style={style.RegsisterText}>Not Registered Yet ?<Text style={style.signupText}>Sign Up</Text></Text>
+            </View>
+
+            <CoustomBtn
+                width={"90%"}
+                title={'Login'}
+                marginTop={'20%'} />
         </View>
     )
 }
 const style = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        backgroundColor: appColors.white
+        backgroundColor: appColors.white,
+        justifyContent:"center"
     },
     mainTitle: {
         fontFamily: AppFonts.bold,
@@ -143,6 +126,22 @@ const style = StyleSheet.create({
 
     },
 
+    textTitle: {
+        color: appColors.black,
+        marginTop:5,
+        fontFamily:AppFonts.medium
+    },
+    RegsisterText: {
+        fontFamily: AppFonts.medium,
+        color: appColors.black,
+        marginTop:10,
 
+        fontSize: 13
+    },
+    signupText: {
+        fontFamily: AppFonts.medium,
+        color: appColors.blue,
+        fontSize: 13
+    }
 
 })
