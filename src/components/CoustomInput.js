@@ -11,10 +11,11 @@ export default function CoustomInput({
     value,
     keyboardType,
     onChangeText,
-    title
+    title,
+    marginTop
 }) {
     return (
-        <View style={style.mainContainer}>
+        <View style={[style.mainContainer,{marginTop:marginTop}]}>
             <Text style={style.textTitle}>{title}</Text>
             <TextInput
                 maxLength={maxLength}
@@ -35,12 +36,11 @@ export default function CoustomInput({
 }
 const style = StyleSheet.create({
     mainContainer: {
-        height: heightPercentageToDP(6),
-        width: "85%",
-        borderWidth: 2,
+        height: heightPercentageToDP(5),
+        width: "100%",
         borderRadius: 10,
-        alignSelf: "center",
-        paddingHorizontal: 5,
+        padding: 8,
+        paddingVertical:4,
         backgroundColor: appColors.white,
         shadowColor: "#000",
         shadowOffset: {
@@ -53,7 +53,7 @@ const style = StyleSheet.create({
     },
     textTitle: {
         fontFamily: AppFonts.Semibold,
-        fontSize: 14,
-        color: appColors.black
+        fontSize: 10,
+        color: appColors.grey
     }
 })

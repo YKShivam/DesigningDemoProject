@@ -4,7 +4,7 @@ const appColors = {
     textcolor:"#F1F1F1",
     blue:"#0096FF",
     borderColor:"#EFF9FF",
-
+grey:"grey"
 
 }
 

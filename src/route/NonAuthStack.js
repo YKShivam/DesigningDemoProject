@@ -4,20 +4,25 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from '../screen/AuthScreens/Splash';
 import Wellcome from '../screen/AuthScreens/Wellcome';
 import Login from '../screen/AuthScreens/Login';
+import Home from '../screen/AuthScreens/Home';
+import Browser from '../screen/NonAuthScreen/Browser';
+import favourite from '../screen/NonAuthScreen/favourite';
+import Baskets from '../screen/NonAuthScreen/Baskets';
+import Account from '../screen/NonAuthScreen/Account';
 
 export default function NonAuthStack() {
     const Stack = createNativeStackNavigator();
     return (
-        // <Stack.Navigator>
-        //     <Stack.Screen name="Splash" component={Splash} />
-        //     <Stack.Screen name="Home" component={Home} />
-        //     <Stack.Screen name="Wellcome" component={Wellcome} />
-        //     <Stack.Screen name="Login" component={Login} />
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Browser" component={Browser} />
+            <Stack.Screen name="favourite" component={favourite} />
+            <Stack.Screen name="Baskets" component={Baskets} />
+            <Stack.Screen name="Account" component={Account} />
 
-        // </Stack.Navigator>
-        <View>
-            <Text>jdkfh</Text>
-        </View>
+
+        </Stack.Navigator>
+     
 
 
     )

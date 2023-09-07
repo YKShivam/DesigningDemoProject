@@ -8,14 +8,12 @@ import AppFonts from '../constant/fonts'
 
 export default function CountryFlagView({ pickerButtonPress, onChangeText }) {
     const [countryCode, setCountryCode] = useState("+1");
-    const [countryFlag, setCountryFlag] = useState("");
-    console.log('courfla=>>', countryFlag);
+    const [countryFlag, setCountryFlag] = useState("🇮🇳");
     const [isVisible, setIsVisible] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState("");
     const [show, setShow] = useState(false);
     return (
         <View style={style.textInputContain}>
-
             <Pressable
                 onPress={() => {
                     setIsVisible(true);
@@ -24,26 +22,26 @@ export default function CountryFlagView({ pickerButtonPress, onChangeText }) {
                 style={[style.countryContain, { borderWidth: 1, }]}
             >
                 <Text style={{ fontSize: 20 }} >{countryFlag} </Text>
-
                 <FastImage
                     resizeMode="contain"
                     tintColor={appColors.black}
                     source={require('../assets/downIcon.png')}
                     style={style.downarrow}
                 />
-
+                <View>
                 <CountryPicker
                     show={show}
-
                     pickerButtonOnPress={(item) => {
-                        console.log('item==>>', item);
+                        console.log(item);
                         pickerButtonPress(item)
                         setCountryCode(item.dial_code);
                         setCountryFlag(item.flag)
                         setShow(false);
                     }}
-                    style={{ height: heightPercentageToDP(30) }}
+                    // initialState={"+91"}
+                    // style={{ height: heightPercentageToDP(30) }}
                 />
+                </View>
             </Pressable>
             <TextInput
                 style={style.textInput}
@@ -70,21 +68,15 @@ const style = StyleSheet.create({
         color: appColors.black,
         fontSize: 18
     },
-
-
     textInputContain: {
         flexDirection: "row",
         alignItems: "center",
-        // justifyContent: "space-around",
-        width: "95%",
-
-
-
+        justifyContent: "space-between",
     },
     countryContain: {
         flexDirection: "row",
         height: heightPercentageToDP(5),
-        width: "18%",
+        width: "20%",
         justifyContent: "space-between",
         backgroundColor: appColors.white,
         paddingHorizontal: 2,
@@ -118,7 +110,7 @@ const style = StyleSheet.create({
     },
     textInput: {
         height: heightPercentageToDP(5),
-        width: "80%",
+        width: "76%",
         textAlign: "left",
         color: appColors.black,
         borderWidth: 1,

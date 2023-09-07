@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260124154188",
+    "project_id": "designingdemoproject",
+    "storage_bucket": "designingdemoproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260124154188:android:17208183a9cb61b6dd17e9",
+        "android_client_info": {
+          "package_name": "com.designingdempproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260124154188-47ldeiqcoomiphdp1fi7erlm5605jh1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDog0uB0pEEYa8L-uZvjSunV1NJkilKiBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260124154188-47ldeiqcoomiphdp1fi7erlm5605jh1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
