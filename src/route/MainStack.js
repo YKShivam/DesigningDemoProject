@@ -1,9 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../screen/AuthScreens/Home";
-import Splash from "../screen/AuthScreens/Splash";
-import Wellcome from "../screen/AuthScreens/Wellcome";
-import Login from "../screen/AuthScreens/Login";
 import AuthStack from "./AuthStack";
 import NonAuthStack from "./NonAuthStack";
 import BottamTab from "./BottamTab";
